@@ -1,13 +1,14 @@
 const histories = document.getElementById("histories");
 
 function addHistory(questionText, timeTaken, errorCount) {
+  const timeArea = Math.ceil(timeTaken);
   const newRow = document.createElement("div");
   newRow.classList.add("card");
 
   newRow.innerHTML = `
   <h3>${questionText}</h3>
   <div>
-  <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+  <p>You took: <span class="bold">${timeArea}</span> seconds</p>
   <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
   </div>
   `;
@@ -22,8 +23,8 @@ function addHistory(questionText, timeTaken, errorCount) {
 }
 
 function displayHistory() {
-  histories.innerHTML = "";
   const previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
+  histories.innerHTML = "";
 
   previousTests.forEach((test) => {
     const newRow = document.createElement("div");

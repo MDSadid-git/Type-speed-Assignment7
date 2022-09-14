@@ -89,7 +89,7 @@ const gameOver = () => {
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, Math.ceil(timeTaken), errorCount);
 
   // restart everything
   startTime = null;
@@ -129,7 +129,7 @@ const start = () => {
 };
 
 // START Countdown
-startBtn.addEventListener("click", start());
+startBtn.addEventListener("click", start);
 
 // If history exists, show it
 displayHistory();
