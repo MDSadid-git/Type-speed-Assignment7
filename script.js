@@ -105,7 +105,7 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  console.log("me");
+  console.log();
   if (startTime) return;
 
   let count = 3;
@@ -138,8 +138,7 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
-
   document.getElementById("show-time").innerHTML = `${
-    startTime ? timeSpent : 0
+    startTime ? Math.ceil(timeSpent) : 0
   } seconds`;
 }, 1000);
