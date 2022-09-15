@@ -105,7 +105,6 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  console.log();
   if (startTime) return;
 
   let count = 3;
